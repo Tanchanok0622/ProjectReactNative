@@ -1,20 +1,22 @@
 import React from 'react'
+import { StyleSheet, Text, View } from 'react-native'
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import HomeScreen from './screens/HomeScreen';
-import AboutScreen from './screens/AboutScreen';
+import firstPage from './screens/FirstPage';
+import secondPage from './screens/SecondPage';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
+    
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName='Home'
+      <Stack.Navigator 
+        initialRouteName = 'firstPage'
         screenOptions={{
           headerStyle: {
-            backgroundColor: '#0096DA',
+            backgroundColor: '#f4511e',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
@@ -22,19 +24,19 @@ const App = () => {
           },
         }}
       >
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{ title: 'หน้าหลัก' }}
+        <Stack.Screen 
+        name="firstPage" 
+        component={firstPage} 
+        options={{title: 'Fisrt Page'}}
         />
-        <Stack.Screen
-          name="About"
-          component={AboutScreen}
-          options={{ title: 'เกี่ยวกับเรา' }}
+        <Stack.Screen 
+        name="secondPage" 
+        component={secondPage} 
+        options={{title: 'Second Page'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
-  );
+  )
 }
 
 export default App
